@@ -6,7 +6,7 @@ response ->
 [
   {
     "id": 1,
-    "email": "aakash.kumar@ad.aaditya-designers.com",
+    "email": "aakash.kumar@adesigners.com",
     "appCode": "E-COMMERCE",
     "appDescription": "E-Commerce App",
     "roleCode": "ADMIN",
@@ -14,7 +14,7 @@ response ->
   },
   {
     "id": 2,
-    "email": "aakash.kumar@ad.aaditya-designers.com",
+    "email": "aakash.kumar@adesigners.com",
     "appCode": "COLLEGE",
     "appDescription": "College Management App",
     "roleCode": "ADMIN",
@@ -22,7 +22,7 @@ response ->
   },
   {
     "id": 3,
-    "email": "aaditya.kumar@ad.aaditya-designers.com",
+    "email": "aaditya.kumar@adesigners.com",
     "appCode": "E-COMMERCE",
     "appDescription": "E-Commerce App",
     "roleCode": "RESEARCHER",
@@ -30,7 +30,7 @@ response ->
   },
   {
     "id": 4,
-    "email": "kavita.raikwar@ad.aaditya-designers.com",
+    "email": "kavita.raikwar@adesigners.com",
     "appCode": "E-COMMERCE",
     "appDescription": "E-Commerce App",
     "roleCode": "USER",
@@ -38,7 +38,7 @@ response ->
   },
   {
     "id": 5,
-    "email": "kavita.raikwar@ad.aaditya-designers.com",
+    "email": "kavita.raikwar@adesigners.com",
     "appCode": "COLLEGE",
     "appDescription": "College Management App",
     "roleCode": "USER",
@@ -52,7 +52,7 @@ response ->
 ```json
 request ->
 {
-  "email": "aakash.kumar@ad.aaditya-designers.com",
+  "email": "aakash.kumar@adesigners.com",
   "appCode": "E-COMMERCE",
   "roleCode": "ADMIN"
 }
@@ -64,7 +64,7 @@ response ->
 ```
 <br/>
 
--- DELETE /api/user_apps_roles/<b>kavita.raikwar@ad.aaditya-designers.com/COLLEGE/USER</b>
+-- DELETE /api/user_apps_roles/<b>kavita.raikwar@adesigners.com/COLLEGE/USER</b>
 ```sh
 response ->
 {
