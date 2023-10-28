@@ -3,7 +3,6 @@ import { getPort } from './utils/port-loader';
 import { initializeDatabase} from './components/db/db-connection';
 import default_routes from './components/api/default';
 
-import { employeeRouter } from './components/api/module/employee';
 import { appsRouter } from './components/api/module/app';
 import { appsFeaturesRouter } from './components/api/module/app_features';
 import { roleRouter } from './components/api/module/role';
@@ -20,7 +19,6 @@ app.use(cors());
 initializeDatabase();
 // mount APIs
 app.use(default_routes);
-app.use('/api/employee', employeeRouter);
 app.use('/api/app', appsRouter);
 app.use('/api/app_features', appsFeaturesRouter);
 app.use('/api/role', roleRouter);
