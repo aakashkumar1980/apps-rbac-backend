@@ -1,14 +1,14 @@
 import express from 'express';
 import { getDb } from '../../db/db-connection';
 
-export const employeeAppsRoleRouter = express.Router();
+export const userAppsRoleRouter = express.Router();
 
 // CREATE
-employeeAppsRoleRouter.post('/', (req, res) => {
+userAppsRoleRouter.post('/', (req, res) => {
     const db = getDb();
     const { email, appCode, roleCode } = req.body;
     const query = `
-    INSERT INTO EMPLOYEE_APPS_ROLES (email, app_id, role_id) VALUES
+    INSERT INTO USER_APPS_ROLES (email, app_id, role_id) VALUES
     (?,  (SELECT id FROM APP WHERE code=?), (SELECT id FROM ROLE WHERE code=?))
     `;
 
@@ -19,23 +19,23 @@ employeeAppsRoleRouter.post('/', (req, res) => {
 });
 
 // READ (all)
-employeeAppsRoleRouter.get('/', (req, res) => {
+userAppsRoleRouter.get('/', (req, res) => {
     const db = getDb();
     const query = `
         SELECT 
-            EAR.email,
+            UAR.email,
             A.code AS appCode,
             A.description AS appDescription,
             R.code AS roleCode,
             R.description AS roleDescription              
         FROM 
-            EMPLOYEE_APPS_ROLES EAR 
+            USER_APPS_ROLES UAR 
         INNER JOIN 
-            APP A ON A.id = EAR.app_id
+            APP A ON A.id = UAR.app_id
         INNER JOIN    
-            ROLE R ON R.id = EAR.role_id
+            ROLE R ON R.id = UAR.role_id
         ORDER BY 
-            EAR.email, A.description, R.description
+            UAR.email, A.description, R.description
     `;
 
     db.all(query, [], (err, rows) => {
@@ -49,10 +49,10 @@ employeeAppsRoleRouter.get('/', (req, res) => {
 // UPDATE 
 
 // DELETE
-employeeAppsRoleRouter.delete('/:email/:appCode/:roleCode', (req, res) => {
+userAppsRoleRouter.delete('/:email/:appCode/:roleCode', (req, res) => {
     const db = getDb();
     const { email, appCode, roleCode } = req.params;
-    db.run(`DELETE FROM EMPLOYEE_APPS_ROLES 
+    db.run(`DELETE FROM USER_APPS_ROLES 
             WHERE email=? 
                 AND app_id=(SELECT id FROM APP WHERE code=?) 
                 AND role_id=(SELECT id FROM ROLE WHERE code=?)`, 
