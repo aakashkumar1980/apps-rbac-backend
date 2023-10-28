@@ -25,6 +25,7 @@ roleAppFeaturesRouter.get('/', (req, res) => {
         SELECT 
             R.code AS roleCode,
             R.description AS roleDescription,
+            A.description AS appDescription,
             AF.code AS appFeaturesCode,
             AF.description AS appFeaturesDescription              
         FROM 
@@ -33,8 +34,10 @@ roleAppFeaturesRouter.get('/', (req, res) => {
             ROLE R ON R.id = RAF.role_id
         INNER JOIN    
             APP_FEATURES AF ON AF.id = RAF.app_features_id
+        INNER JOIN
+            APP A ON A.id = AF.app_id
         ORDER BY 
-            R.description, AF.description
+            R.description, A.description, AF.description
     `;
 
     db.all(query, [], (err, rows) => {
