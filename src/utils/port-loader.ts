@@ -1,9 +1,28 @@
-const fs = require('fs');
+import axios from 'axios';
 
-const configData = fs.readFileSync("/home/ubuntu/Desktop/PRIVATE-LEARNINGv2/PROJECTS/LEARNING/SERVER-PORTS.json", 'utf-8');
-const config = JSON.parse(configData);
-console.log("PORT: ", config.NODE_APP_PRIVILEGEPASS_BACKEND);
-
-export function getPort() {
-    return config.NODE_APP_PRIVILEGEPASS_BACKEND;
+let config: any = null;
+export async function loadConfigFromCloud() {
+    try {
+        const url = 'https://raw.githubusercontent.com/aakashkumar1980/apps-configs/main/SERVER-PORTS.json';
+        const response = await axios.get(url);
+        
+        config = response.data;
+        
+        console.log("PORT: ", config.PRIVILEGEPASS_BACKEND);
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error('Error fetching config:', error.message);
+        } else {
+            // Handle or re-throw the error if it's not an instance of Error
+            console.error('An unknown error occurred:', error);
+        }
+    }
 }
+
+export function getPort(): number {
+    if (!config) {
+        throw new Error("Config hasn't been loaded yet.");
+    }
+    return config.PRIVILEGEPASS_BACKEND;
+}
+
