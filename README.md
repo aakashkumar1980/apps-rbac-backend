@@ -11,5 +11,13 @@ https://github.com/aakashkumar1980/apps-rbac-ui
 The below data is the sample values just to show a set of an Application, related Features along with mappings of the User having Roles.
 
 [App](./README-App.md)
-
+<br/>
 [App_Features](./README-App_Features.md)
+
+[Role](./README-Role.md)
+<br/>
+<br/>
+
+[Role_App_Features](./README-Role_App_Features.md)
+<br/>
+[User_Apps_Roles](./README-User_Apps_Roles.md)

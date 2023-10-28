@@ -23,6 +23,7 @@ roleAppFeaturesRouter.get('/', (req, res) => {
     const db = getDb();
     const query = `
         SELECT 
+            RAF.id AS id,
             R.code AS roleCode,
             R.description AS roleDescription,
             A.description AS appDescription,

@@ -5,14 +5,14 @@
 response ->
 [
   {
-    "id": 2,
-    "code": "COLLEGE",
-    "description": "College Management App"
-  },
-  {
     "id": 1,
     "code":"E-COMMERCE",
     "description":"E-Commerce App"
+  },  
+  {
+    "id": 2,
+    "code": "COLLEGE",
+    "description": "College Management App"
   }
 ]
 ```
@@ -22,13 +22,13 @@ response ->
 ```json
 request ->
 {
-    "code":"COLLEGE",
-    "description":"College Management App"
+  "code":"E-COMMERCE",
+  "description":"E-Commerce App"
 }
 
 response ->
 {
-    "id":2
+    "id":1
 }
 ```
 <br/>

@@ -23,6 +23,7 @@ userAppsRoleRouter.get('/', (req, res) => {
     const db = getDb();
     const query = `
         SELECT 
+            UAR.id AS id,
             UAR.email,
             A.code AS appCode,
             A.description AS appDescription,

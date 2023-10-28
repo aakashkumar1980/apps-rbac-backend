@@ -23,6 +23,7 @@ appsFeaturesRouter.get('/', (req, res) => {
     const db = getDb();
     const query = `
         SELECT 
+            AF.id AS id,
             AF.code, 
             AF.description, 
             A.code AS appCode,
