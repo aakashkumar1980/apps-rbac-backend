@@ -44,7 +44,7 @@ response ->
 ```
 <br/>
 
--- DELETE /api/app/COLLEGE
+-- DELETE /api/app/<span style="color:red">COLLEGE</span>
 ```sh
 response ->
 {
