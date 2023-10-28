@@ -7,7 +7,10 @@ https://github.com/aakashkumar1980/apps-rbac-ui
 
 
 ## Operation API specs
-### APP
+
+<details>
+<summary>APP</summary>
+
 -- GET /api/app
 ```json
 response ->
@@ -48,3 +51,4 @@ response ->
     "changes": 1
 }
 ```
+</details>
