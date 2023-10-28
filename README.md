@@ -113,18 +113,19 @@ response ->
 ```json
 request ->
 {
-    "code": "COLLEGE",
-    "description": "College Management App"
+    "code":"STUDENT_DIRECTORY",
+    "description":"Access Student Directory",
+    "appCode":"COLLEGE"
 }
 
 response ->
 {
-    "id": 2
+    "id": 1
 }
 ```
 <br/>
 
--- DELETE /api/app_features/<b>COLLEGE</b>
+-- DELETE /api/app_features/<b>STUDENT_DIRECTORY</b>
 ```sh
 response ->
 {
