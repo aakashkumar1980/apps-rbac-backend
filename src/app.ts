@@ -4,9 +4,9 @@ import { initializeDatabase} from './components/db/db-connection';
 import default_routes from './components/api/default';
 
 import { appsRouter } from './components/api/module/app';
-import { appsFeaturesRouter } from './components/api/module/app_features';
+import { appsfeaturesRouter } from './components/api/module/appfeatures';
 import { roleRouter } from './components/api/module/role';
-import { roleAppFeaturesRouter } from './components/api/module/role_app_features';
+import { roleAppfeaturesRouter } from './components/api/module/role_appfeatures';
 import { userAppsRoleRouter } from './components/api/module/user_apps_roles';
 import { externalRouter } from './components/api/module/external';
 
@@ -24,9 +24,9 @@ async function initializeApp() {
   // mount APIs
   app.use(default_routes);
   app.use('/api/app', appsRouter);
-  app.use('/api/app_features', appsFeaturesRouter);
+  app.use('/api/appfeatures', appsfeaturesRouter);
   app.use('/api/role', roleRouter);
-  app.use('/api/role_app_features', roleAppFeaturesRouter);
+  app.use('/api/role_appfeatures', roleAppfeaturesRouter);
   app.use('/api/user_apps_roles', userAppsRoleRouter);
   app.use('/api/external', externalRouter);
 

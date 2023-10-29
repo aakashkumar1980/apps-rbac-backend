@@ -23,9 +23,9 @@ externalRouter.get('/:email/:appCode', (req, res) => {
         ROLE R ON R.id = EAR.role_id
 
     INNER JOIN
-        ROLE_APP_FEATURES RAF ON RAF.role_id = R.id 
+        ROLE_APPFEATURES RAF ON RAF.role_id = R.id 
     INNER JOIN    
-        APP_FEATURES AF ON AF.id = RAF.app_features_id AND AF.app_id = A.id
+        APPFEATURES AF ON AF.id = RAF.appfeatures_id AND AF.app_id = A.id
 
     WHERE 1==1
         AND EAR.email=?
@@ -51,7 +51,7 @@ externalRouter.get('/:appCode', (req, res) => {
         AF.description AS featureDescription                      
     FROM APP A
     INNER JOIN    
-        APP_FEATURES AF ON AF.app_id = A.id
+        APPFEATURES AF ON AF.app_id = A.id
     WHERE 1==1
         AND A.code=?            
     ORDER BY 
