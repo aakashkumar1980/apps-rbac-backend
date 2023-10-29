@@ -23,9 +23,9 @@ The below data is the <u>sample values</u> just to show a set of an Application,
 [User_Apps_Roles](./_readme-resources/README-User_Apps_Roles.md)
 
 
-<br/>
 
 ### EXTERNAL API specs
 The below data is the <u>sample values</u> just to show a set of Features associated with a User in an App.
+This API should be used by all applications for their Authorization.
 
 [User_App_Features](./_readme-resources/README-User_App_Features.md)
