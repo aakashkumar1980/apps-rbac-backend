@@ -21,3 +21,11 @@ The below data is the <u>sample values</u> just to show a set of an Application,
 [Role_Features](./_readme-resources/README-Role_Features.md)
 <br/>
 [User_Apps_Roles](./_readme-resources/README-User_Apps_Roles.md)
+
+
+<br/>
+
+### EXTERNAL API specs
+The below data is the <u>sample values</u> just to show a set of Features associated with a User in an App.
+
+[User_App_Features](./_readme-resources/README-User_App_Features.md)

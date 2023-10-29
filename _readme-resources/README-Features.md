@@ -1,6 +1,6 @@
-<b>  FEATURES</b>
+<b>  FEATURE</b>
 
--- GET /api/features
+-- GET /api/feature
 ```json
 response ->
 [
@@ -57,7 +57,7 @@ response ->
 ```
 </br>
 
--- POST /api/features
+-- POST /api/feature
 ```json
 request ->
 {
@@ -73,7 +73,7 @@ response ->
 ```
 <br/>
 
--- DELETE /api/features/<b>EXAM_SCHEDULE</b>
+-- DELETE /api/feature/<b>EXAM_SCHEDULE</b>
 ```sh
 response ->
 {

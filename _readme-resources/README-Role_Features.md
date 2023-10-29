@@ -9,80 +9,80 @@ response ->
     "roleCode": "ADMIN",
     "roleDescription": "Administrator",
     "appDescription": "E-Commerce App",
-    "featuresCode": "PRODUCT_LIST",
-    "featuresDescription": "View Products List"
+    "featureCode": "PRODUCT_LIST",
+    "featureDescription": "View Products List"
   },
   {
     "id": 2,
     "roleCode": "ADMIN",
     "roleDescription": "Administrator",
     "appDescription": "E-Commerce App",
-    "featuresCode": "ORDER_MANAGEMENT",
-    "featuresDescription": "Manage Customer Orders"
+    "featureCode": "ORDER_MANAGEMENT",
+    "featureDescription": "Manage Customer Orders"
   },
   {
     "id": 3,
     "roleCode": "ADMIN",
     "roleDescription": "Administrator",
     "appDescription": "E-Commerce App",
-    "featuresCode": "CUSTOMER_REVIEWS",
-    "featuresDescription": "View Customer Reviews"
+    "featureCode": "CUSTOMER_REVIEWS",
+    "featureDescription": "View Customer Reviews"
   },
   {
     "id": 4,
     "roleCode": "ADMIN",
     "roleDescription": "Administrator",
     "appDescription": "College Management App",
-    "featuresCode": "STUDENT_DIRECTORY",
-    "featuresDescription": "Access Student Directory"
+    "featureCode": "STUDENT_DIRECTORY",
+    "featureDescription": "Access Student Directory"
   },
   {
     "id": 5,
     "roleCode": "ADMIN",
     "roleDescription": "Administrator",
     "appDescription": "College Management App",
-    "featuresCode": "COURSE_MANAGEMENT",
-    "featuresDescription": "Manage Courses"
+    "featureCode": "COURSE_MANAGEMENT",
+    "featureDescription": "Manage Courses"
   },
   {
     "id": 6,
     "roleCode": "ADMIN",
     "roleDescription": "Administrator",
     "appDescription": "College Management App",
-    "featuresCode": "EXAM_SCHEDULE",
-    "featuresDescription": "Manage Exam Schedules"
+    "featureCode": "EXAM_SCHEDULE",
+    "featureDescription": "Manage Exam Schedules"
   },
   {
     "id": 7,
     "roleCode": "RESEARCHER",
     "roleDescription": "Researcher",
     "appDescription": "E-Commerce App",
-    "featuresCode": "E-COM_ANALYTICS",
-    "featuresDescription": "Access E-commerce Analytics"
+    "featureCode": "E-COM_ANALYTICS",
+    "featureDescription": "Access E-commerce Analytics"
   },
   {
     "id": 8,
     "roleCode": "USER",
     "roleDescription": "User",
     "appDescription": "E-Commerce App",
-    "featuresCode": "PRODUCT_LIST",
-    "featuresDescription": "View Products List"
+    "featureCode": "PRODUCT_LIST",
+    "featureDescription": "View Products List"
   },
   {
     "id": 9,
     "roleCode": "USER",
     "roleDescription": "User",
     "appDescription": "E-Commerce App",
-    "featuresCode": "CUSTOMER_REVIEWS",
-    "featuresDescription": "View Customer Reviews"
+    "featureCode": "CUSTOMER_REVIEWS",
+    "featureDescription": "View Customer Reviews"
   },
   {
     "id": 10,
     "roleCode": "USER",
     "roleDescription": "User",
     "appDescription": "College Management App",
-    "featuresCode": "STUDENT_DIRECTORY",
-    "featuresDescription": "Access Student Directory"
+    "featureCode": "STUDENT_DIRECTORY",
+    "featureDescription": "Access Student Directory"
   }
 ]
 ```
@@ -93,7 +93,7 @@ response ->
 request ->
 {
   "roleCode": "ADMIN",
-  "featuresCode": "PRODUCT_LIST"
+  "featureCode": "PRODUCT_LIST"
 }
 
 response ->

@@ -4,7 +4,7 @@ import { initializeDatabase} from './components/db/db-connection';
 import default_routes from './components/api/default';
 
 import { appsRouter } from './components/api/module/app';
-import { featuresRouter } from './components/api/module/features';
+import { featureRouter } from './components/api/module/feature';
 import { roleRouter } from './components/api/module/role';
 import { roleFeaturesRouter } from './components/api/module/role_features';
 import { userAppsRoleRouter } from './components/api/module/user_apps_roles';
@@ -24,7 +24,7 @@ async function initializeApp() {
   // mount APIs
   app.use(default_routes);
   app.use('/api/app', appsRouter);
-  app.use('/api/features', featuresRouter);
+  app.use('/api/feature', featureRouter);
   app.use('/api/role', roleRouter);
   app.use('/api/role_features', roleFeaturesRouter);
   app.use('/api/user_apps_roles', userAppsRoleRouter);

@@ -6,13 +6,13 @@ export const roleFeaturesRouter = express.Router();
 // CREATE
 roleFeaturesRouter.post('/', (req, res) => {
     const db = getDb();
-    const { roleCode, featuresCode } = req.body;
+    const { roleCode, featureCode } = req.body;
     const query = `
-    INSERT INTO ROLE_FEATURES (role_id, features_id) VALUES
-    ((SELECT id FROM ROLE WHERE code=?), (SELECT id FROM FEATURES WHERE code=?))
+    INSERT INTO ROLE_FEATURES (role_id, feature_id) VALUES
+    ((SELECT id FROM ROLE WHERE code=?), (SELECT id FROM FEATURE WHERE code=?))
     `;
 
-    db.run(query, [roleCode, featuresCode], function(err) {
+    db.run(query, [roleCode, featureCode], function(err) {
         if (err) return res.status(500).json({ error: err.message });
         res.json({ id: this.lastID });
     });
@@ -27,18 +27,18 @@ roleFeaturesRouter.get('/', (req, res) => {
             R.code AS roleCode,
             R.description AS roleDescription,
             A.description AS appDescription,
-            A.code AS featuresCode,
-            A.description AS featuresDescription              
+            A.code AS featureCode,
+            F.description AS featureDescription              
         FROM 
             ROLE_FEATURES RF 
         INNER JOIN 
             ROLE R ON R.id = RF.role_id
         INNER JOIN    
-            FEATURES A ON A.id = RF.features_id
+            FEATURE F ON F.id = RF.feature_id
         INNER JOIN
-            APP A ON A.id = A.app_id
+            APP A ON A.id = F.app_id
         ORDER BY 
-            R.description, A.description, A.description
+            R.description, A.description, F.description
     `;
 
     db.all(query, [], (err, rows) => {
@@ -52,14 +52,14 @@ roleFeaturesRouter.get('/', (req, res) => {
 // UPDATE
 
 // DELETE
-roleFeaturesRouter.delete('/:roleCode/:featuresCode', (req, res) => {
+roleFeaturesRouter.delete('/:roleCode/:featureCode', (req, res) => {
     const db = getDb();
-    const { roleCode, featuresCode } = req.params;
+    const { roleCode, featureCode } = req.params;
 
     db.run(`DELETE FROM ROLE_FEATURES 
             WHERE role_id=(SELECT id FROM ROLE WHERE code=?) 
-                AND features_id=(SELECT id FROM FEATURES WHERE code=?)
-            `, [roleCode, featuresCode], function(err) {
+                AND feature_id=(SELECT id FROM FEATURE WHERE code=?)
+            `, [roleCode, featureCode], function(err) {
         if (err) return res.status(500).json({ error: err.message });
         res.json({ changes: this.changes });
     });
