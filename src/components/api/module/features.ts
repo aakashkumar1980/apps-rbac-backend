@@ -1,14 +1,14 @@
 import express from 'express';
 import { getDb } from '../../db/db-connection';
 
-export const appsfeaturesRouter = express.Router();
+export const featuresRouter = express.Router();
 
 // CREATE
-appsfeaturesRouter.post('/', (req, res) => {
+featuresRouter.post('/', (req, res) => {
     const db = getDb();
     const { code, description, appCode } = req.body;
     const query = `
-    INSERT INTO APPFEATURES (code, description, app_id) VALUES
+    INSERT INTO FEATURES (code, description, app_id) VALUES
     (?, ?, (SELECT id FROM APP WHERE code=?))
     `;
 
@@ -19,21 +19,21 @@ appsfeaturesRouter.post('/', (req, res) => {
 });
 
 // READ (all)
-appsfeaturesRouter.get('/', (req, res) => {
+featuresRouter.get('/', (req, res) => {
     const db = getDb();
     const query = `
         SELECT 
-            AF.id,
-            AF.code, 
-            AF.description, 
+            F.id,
+            F.code, 
+            F.description, 
             A.code AS appCode,
             A.description AS appDescription 
         FROM 
-            APPFEATURES AF 
+            FEATURES F 
         INNER JOIN 
-            APP A ON A.id = AF.app_id
+            APP A ON A.id = F.app_id
         ORDER BY 
-            A.description, AF.description
+            A.description, F.description
     `;
 
     db.all(query, [], (err, rows) => {
@@ -47,11 +47,11 @@ appsfeaturesRouter.get('/', (req, res) => {
 // UPDATE
 
 // DELETE
-appsfeaturesRouter.delete('/:code', (req, res) => {
+featuresRouter.delete('/:code', (req, res) => {
     const db = getDb();
     const { code } = req.params;
 
-    db.run('DELETE FROM APPFEATURES WHERE code = ?', [code], function(err) {
+    db.run('DELETE FROM FEATURES WHERE code = ?', [code], function(err) {
         if (err) return res.status(500).json({ error: err.message });
         res.json({ changes: this.changes });
     });

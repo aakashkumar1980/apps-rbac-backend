@@ -1,6 +1,6 @@
-<b>ROLE_APPFEATURES</b>
+<b>ROLE_FEATURES</b>
 
--- GET /api/role_appfeatures
+-- GET /api/role_features
 ```json
 response ->
 [
@@ -9,91 +9,91 @@ response ->
     "roleCode": "ADMIN",
     "roleDescription": "Administrator",
     "appDescription": "E-Commerce App",
-    "appfeaturesCode": "PRODUCT_LIST",
-    "appfeaturesDescription": "View Products List"
+    "featuresCode": "PRODUCT_LIST",
+    "featuresDescription": "View Products List"
   },
   {
     "id": 2,
     "roleCode": "ADMIN",
     "roleDescription": "Administrator",
     "appDescription": "E-Commerce App",
-    "appfeaturesCode": "ORDER_MANAGEMENT",
-    "appfeaturesDescription": "Manage Customer Orders"
+    "featuresCode": "ORDER_MANAGEMENT",
+    "featuresDescription": "Manage Customer Orders"
   },
   {
     "id": 3,
     "roleCode": "ADMIN",
     "roleDescription": "Administrator",
     "appDescription": "E-Commerce App",
-    "appfeaturesCode": "CUSTOMER_REVIEWS",
-    "appfeaturesDescription": "View Customer Reviews"
+    "featuresCode": "CUSTOMER_REVIEWS",
+    "featuresDescription": "View Customer Reviews"
   },
   {
     "id": 4,
     "roleCode": "ADMIN",
     "roleDescription": "Administrator",
     "appDescription": "College Management App",
-    "appfeaturesCode": "STUDENT_DIRECTORY",
-    "appfeaturesDescription": "Access Student Directory"
+    "featuresCode": "STUDENT_DIRECTORY",
+    "featuresDescription": "Access Student Directory"
   },
   {
     "id": 5,
     "roleCode": "ADMIN",
     "roleDescription": "Administrator",
     "appDescription": "College Management App",
-    "appfeaturesCode": "COURSE_MANAGEMENT",
-    "appfeaturesDescription": "Manage Courses"
+    "featuresCode": "COURSE_MANAGEMENT",
+    "featuresDescription": "Manage Courses"
   },
   {
     "id": 6,
     "roleCode": "ADMIN",
     "roleDescription": "Administrator",
     "appDescription": "College Management App",
-    "appfeaturesCode": "EXAM_SCHEDULE",
-    "appfeaturesDescription": "Manage Exam Schedules"
+    "featuresCode": "EXAM_SCHEDULE",
+    "featuresDescription": "Manage Exam Schedules"
   },
   {
     "id": 7,
     "roleCode": "RESEARCHER",
     "roleDescription": "Researcher",
     "appDescription": "E-Commerce App",
-    "appfeaturesCode": "E-COM_ANALYTICS",
-    "appfeaturesDescription": "Access E-commerce Analytics"
+    "featuresCode": "E-COM_ANALYTICS",
+    "featuresDescription": "Access E-commerce Analytics"
   },
   {
     "id": 8,
     "roleCode": "USER",
     "roleDescription": "User",
     "appDescription": "E-Commerce App",
-    "appfeaturesCode": "PRODUCT_LIST",
-    "appfeaturesDescription": "View Products List"
+    "featuresCode": "PRODUCT_LIST",
+    "featuresDescription": "View Products List"
   },
   {
     "id": 9,
     "roleCode": "USER",
     "roleDescription": "User",
     "appDescription": "E-Commerce App",
-    "appfeaturesCode": "CUSTOMER_REVIEWS",
-    "appfeaturesDescription": "View Customer Reviews"
+    "featuresCode": "CUSTOMER_REVIEWS",
+    "featuresDescription": "View Customer Reviews"
   },
   {
     "id": 10,
     "roleCode": "USER",
     "roleDescription": "User",
     "appDescription": "College Management App",
-    "appfeaturesCode": "STUDENT_DIRECTORY",
-    "appfeaturesDescription": "Access Student Directory"
+    "featuresCode": "STUDENT_DIRECTORY",
+    "featuresDescription": "Access Student Directory"
   }
 ]
 ```
 </br>
 
--- POST /api/role_appfeatures
+-- POST /api/role_features
 ```json
 request ->
 {
   "roleCode": "ADMIN",
-  "appfeaturesCode": "PRODUCT_LIST"
+  "featuresCode": "PRODUCT_LIST"
 }
 
 response ->
@@ -103,7 +103,7 @@ response ->
 ```
 <br/>
 
--- DELETE /api/role_appfeatures/<b>USER/STUDENT_DIRECTORY</b>
+-- DELETE /api/role_features/<b>USER/STUDENT_DIRECTORY</b>
 ```sh
 response ->
 {

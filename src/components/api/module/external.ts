@@ -13,8 +13,8 @@ externalRouter.get('/:email/:appCode', (req, res) => {
         A.description AS appDescription,
         R.code AS roleCode,
         R.description AS roleDescription,
-        AF.code AS featureCode,
-        AF.description AS featureDescription                      
+        F.code AS featureCode,
+        F.description AS featureDescription                      
     FROM 
         EMPLOYEE_APPS_ROLES EAR 
     INNER JOIN 
@@ -23,15 +23,15 @@ externalRouter.get('/:email/:appCode', (req, res) => {
         ROLE R ON R.id = EAR.role_id
 
     INNER JOIN
-        ROLE_APPFEATURES RAF ON RAF.role_id = R.id 
+        ROLE_FEATURES RF ON RF.role_id = R.id 
     INNER JOIN    
-        APPFEATURES AF ON AF.id = RAF.appfeatures_id AND AF.app_id = A.id
+        FEATURES F ON F.id = RF.features_id AND F.app_id = A.id
 
     WHERE 1==1
         AND EAR.email=?
         AND A.code=?            
     ORDER BY 
-        EAR.email, A.description, R.description, AF.description
+        EAR.email, A.description, R.description, F.description
     `;
 
     db.all(query, [email, appCode], (err, rows) => {
@@ -47,15 +47,15 @@ externalRouter.get('/:appCode', (req, res) => {
     SELECT 
         A.code AS appCode,
         A.description AS appDescription,
-        AF.code AS featureCode,
-        AF.description AS featureDescription                      
+        F.code AS featureCode,
+        F.description AS featureDescription                      
     FROM APP A
     INNER JOIN    
-        APPFEATURES AF ON AF.app_id = A.id
+        FEATURES F ON F.app_id = A.id
     WHERE 1==1
         AND A.code=?            
     ORDER BY 
-        A.description, AF.description
+        A.description, F.description
     `;
 
     db.all(query, [appCode], (err, rows) => {

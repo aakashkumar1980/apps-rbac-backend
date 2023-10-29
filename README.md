@@ -12,12 +12,12 @@ The below data is the <u>sample values</u> just to show a set of an Application,
 
 [App](./_readme-resources/README-App.md)
 <br/>
-[Appfeatures](./_readme-resources/README-Appfeatures.md)
+[Features](./_readme-resources/README-Features.md)
 
 [Role](./_readme-resources/README-Role.md)
 <br/>
 <br/>
 
-[Role_Appfeatures](./_readme-resources/README-Role_Appfeatures.md)
+[Role_Features](./_readme-resources/README-Role_Features.md)
 <br/>
 [User_Apps_Roles](./_readme-resources/README-User_Apps_Roles.md)
